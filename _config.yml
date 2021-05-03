@@ -1,1 +1,13 @@
+# Site settings
+title: Daniel Hernández
+email: danielhg52@hotmail.com
+url: "https://danielhj1998.github.io/"
+github_username: danielhj1998
 theme: jekyll-theme-minimal
+
+# Build settings
+markdown: kramdown
+
+# URLS
+link_to:
+    github: "https://github.com/danielhj1998"
