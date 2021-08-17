@@ -1,6 +1,7 @@
 ---
 ---
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
 @charset "utf-8";
 
@@ -24,6 +25,36 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: $dark;
+    text-align: justify;
+}
+
+a {
+    position: relative;
+    display: inline-block;
+    color: $dark;
+    text-decoration: none;
+    transition-delay: 1s;
+    transition: opacity .2s ease, transform .3s ease;
+    &:before{
+        content: "";
+        position: absolute;
+        background: #f255c0;
+        width: 15px;
+        height: 1.5px;
+        bottom: 0;
+        transform: translate(0%, 0%);
+        transition: all .3s ease;
+        z-index: -1;
+    }
+    &:hover{
+        &:before{
+            width: 100%;
+        }
+    }
+}
+
+span.lang {
+    font-size: 12px;
 }
 
 // Default layout
@@ -60,17 +91,17 @@ div.home {
         display: flex;
         div.info-container {
             max-width: 700px;
-            a {
-                text-decoration: none;
-            }
+            h2, h4 { font-family: "Fira Sans", sans-serif; }
         }
     }
+
     div.social-container {
         a {
             text-decoration: none;
-            :hover{
+            &:hover{
                 opacity: 0.8;
             }
+            &:before { content: none; }
         }
 
         svg {
