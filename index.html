@@ -60,7 +60,7 @@ layout: default
         </a>
         <ul class="post-list">
         {% for post in site.posts limit:3 %}
-            <a class="post-link" href="{{site.baseurl}}{{post.url}}">
+            <a class="post-link" href="{{site.url}}/blogger{{post.url}}">
                     <li>
                         {{ post.title }}
                     </li>
