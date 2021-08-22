@@ -51,7 +51,7 @@ div.courtain {
     background-color: #34343A;
     width: 115px;
     height: 115px;
-    margin-top: -7px;
+    margin-top: -8px;
 }
 
 div.page-content {
@@ -196,6 +196,12 @@ div.secondary-container {
 }
 
 @media (max-width: 542px) {
+    div.home{
+        padding: 0 20px;
+        h2 {
+            letter-spacing: 5px;
+        }
+    }
     div.main-container, div.secondary-container {
         width: 100%;
     }
