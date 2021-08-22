@@ -4,26 +4,74 @@ layout: default
 
 <div class="home">
     <div class="main-container">
-        <img class="photo" src="https://avatars.githubusercontent.com/u/38321649?v=4" >
+        <div class="go-home">
+          <a href="{{ site.url }}"> {% include icons/logo.svg %}
+          <div class="courtain"></div> </a>
+        </div>
+        <div class="circle">
+            <img onmouseover="playGif(this)" onmouseout="stopGif(this)" class="photo" src="{{site.url}}/assets/images/saludo.png" >
+            
+<script>
+    function playGif(img) {
+        img.src = "assets/images/saludo.gif";
+    };
+    function stopGif(img) {
+        img.src = "assets/images/saludo.png";
+    };
+</script>
+
+        </div>
         <div class="info-container">
-            <h2>{{ site.title }}</h2>
-            <h4>Coding, videogames and chinese food lover</h4>
+            <h2>{{ site.title | upcase }}</h2>
+            <h4>Coding 💻, videogames 🎮 and chinese food 🥡 lover ❤️</h4>
             <p>
-            I'm a mechatronics engineering student at UPIITA - IPN in Mexico, interested in cyber security and mobile development.
+            Welcome! I am mechatronics engineering student from Mexico, interested in cyber security and software development. I am always seeking to be better and making things I can be proud of.
             </p>
-            <p>
-            If you are a classmate of mine, you might be interested in my <a href="{{ site.link_to.notes }}">notes <span class="lang">🇲🇽</span></a> .
-            </p>
-            <p>
-            If you are a recruiter, please take a look to my 
-                <a href="{{ site.url}}/assets/CV_EN.pdf" target="_blank" rel="noopener noreferrer">resume <span class="lang">🇬🇧</span>
-                </a> | 
-                <a href="{{ site.url}}/assets/CV_ES.pdf" target="_blank" rel="noopener noreferrer"><span class="lang">🇲🇽</span>
-                </a> .
             <div class="social-container">
-                <a href="{{ site.link_to.github }}">{% include icons/github.svg %}</a>
-                <a href="mailto:{{ site.email }}">{% include icons/mail.svg %}</a>
+                <h5>Reach me on ...</h5>
+                <div>
+                <a href="{{ site.link_to.twitter }}" target="_blank" rel="noopener">{% include icons/twitter.svg %}</a>
+                <a href="mailto:{{ site.email }}" target="_blank" rel="noopener">{% include icons/email.svg %}</a>
+                <a href="{{ site.link_to.github }}" target="_blank" rel="noopener">{% include icons/github.svg %}</a>
+                </div>
             </div>
         </div>
+    </div>
+    <div class="secondary-container">
+        <div class="section-container">
+            <div class="cv-container">
+                <h5>📄 CV</h5>
+                <div class="cv-language-container">
+                    <a href="{{site.url}}/assets/CV_EN.pdf" target="_blank" rel="noopener"><h5>english</h5></a>
+                    <a href="{{site.url}}/assets/CV_ES.pdf" target="_blank" rel="noopener"><h5>spanish</h5></a>
+                    <!--<a href="{{site.url}}/assets/CV_FR.pdf" target="_blank" rel="noopener"><h5>french</h5></a>-->
+                </div>
+            </div>
+        </div>
+        <a href="{{site.link_to.notes}}" class="section-link">
+            <div class="section-container">
+                    <h5>✍️  School Notes</h5>
+            </div>
+        </a>
+        <a href="{{site.link_to.blog}}" class="section-link">
+            <div class="section-container">
+                    <h5>🖋 Posts</h5>
+            </div>
+        </a>
+        <ul class="post-list">
+        {% for post in site.posts limit:3 %}
+            <a class="post-link" href="{{site.baseurl}}{{post.url}}">
+                    <li>
+                        {{ post.title }}
+                    </li>
+                    <div>
+                        <p>⏱ {{post.reading_time}} min</p>
+                        <p>
+                        {{ post.date_shown }}
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+        </ul>
     </div>
 </div>
