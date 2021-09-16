@@ -7,7 +7,7 @@ date_shown: 14 Ago 2021
 excerpt_separator: <!--intro-->
 ---
 
-Soy el tipo de persona que gusta de tener buenos apuntes 🤓, porque sé que mi yo del futuro me lo va a agradecer. Sin embargo, al iniciar la pandemia por Covid 19 😷 y con eso, las clases en línea en la universidad, tomaba todas mis clases en la laptop mientras escribía mis apuntes en el cuaderno. Realmente era algo incómodo 😒, pues ocupaba mucho más espacio que antes y desde mi punto de vista no tenía sentido que siguiera haciéndolo de esa manera, teniendo la PC encendida.
+Soy el tipo de persona que gusta de tener buenos apuntes 🤓, porque sé que mi yo del futuro me lo va a agradecer. Sin embargo, al iniciar la pandemia por Covid 19 😷 y con eso, las clases en línea en la universidad, tomaba todas mis clases en la laptop mientras escribía mis apuntes en el cuaderno. Realmente era algo incómodo ☹, pues ocupaba mucho más espacio que antes y desde mi punto de vista no tenía sentido que siguiera haciéndolo de esa manera, teniendo la PC encendida.
 
 <!--intro-->
 
@@ -38,11 +38,11 @@ Los snippets sirven para autocompletar al momento de escribir una palabra.
 
 ![snippets intro](/blogger/assets/snippetsIntro.gif)
 
-Sólo tengo que escribir `intro` y `firma` para y presionar `<TAB>` para insertar un texto predefinido. Esto hace una diferencia enorme al momento de de escribir código $\KaTeX$.
+Sólo tengo que escribir `intro` y `firma` , presionar `<TAB>` y luego `ENTER` para insertar un texto predefinido. Esto hace una diferencia enorme al momento de de escribir código $\KaTeX$.
 
 ![snippets con sin](/blogger/assets/snippetsComparison.gif)
 
-A la izquierda se muestra el caso sin utilizar snippets y del lado derecho con snippets, que es más rápido. El snippet lo defino con anterioridad y está configurado para desplegarse de forma automática, sin tener que oprimir `<TAB>`.
+A la izquierda se muestra el caso sin utilizar snippets y del lado derecho con snippets, que es más rápido. El snippet lo defino con anterioridad y está configurado para desplegarse de forma automática, **sin** tener que **oprimir nada**.
 
 En Joplin no se puede hacer esto puesto que sólo tiene un emulador de `Vim` al escribir. Para implementar los plugins necesarios necesitamos `Vim` tal cual.
 
@@ -53,7 +53,7 @@ Así se ve cuando tomo notas para mi clase:
 
 Al terminar la clase, dado que las notas están como archivos markdown `.md` en un repositorio `git`, sólo hago un commit y acto seguido, tengo el apunte listo en mi página web. [He aquí el apunte del ejemplo](https://danielhj.com/studious/notes/7mo%20Semestre/Control%20de%20Sistemas%20Mecatr%C3%B3nicos/Discretizaci%C3%B3n%20de%20ecuaciones%20en%20espacio%20de%20estado.html).
 
-Me encanta este arreglo 🤩 puesto que puedo seguir el ritmo de la clase. Todo está a unos cuantos comandos de distancia y al final tengo un apunte bien organizado y muy limpio, al cual puedo acceder desde cualquier dispositivo y puedo compartirlo fácilmente.
+Me encanta este arreglo 🤩, puesto que puedo seguir el ritmo de la clase. Todo está a unos cuantos comandos de distancia y al final tengo un apunte bien organizado y muy limpio, al cual puedo acceder desde cualquier dispositivo y puedo compartirlo fácilmente.
 
 ### ¿Cómo funciona?
 
@@ -62,7 +62,7 @@ Utilizo [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) que es
 Instalé [Ubuntu](https://www.microsoft.com/store/apps/9n6svws3rx71), pero cualquier [distribución](https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-6---install-your-linux-distribution-of-choice) funciona.
 
 #### Editor de texto
-Lo siguiente y más importante es el editor de texto, en este caso [Neovim](https://neovim.io/), es básicamente un fork de [Vim](https://github.com/vim/vim), pero que mantiene la comunidad (ya que Vim es mantenido por su creador). Es un editor de texto desde la línea de comandos, es súper personalizable, tiene su propio lenguaje de programación y existen muchísimos plugins que permiten hacer de todo con él y de formas muy eficientes. De hecho está diseñado para utilizar sólo el teclado y por lo tanto es más rápido.
+Lo siguiente y más importante es el editor de texto, en este caso [Neovim](https://neovim.io/), es básicamente un fork de [Vim](https://github.com/vim/vim), pero que mantiene la comunidad (ya que Vim es mantenido por su creador). Es un editor de texto desde la línea de comandos, es súper personalizable, tiene su propio lenguaje de programación y existen muchísimos plugins que permiten hacer de todo con él y de formas muy eficientes. De hecho está diseñado para utilizar únicamente el teclado.
 
 ##### Plugins
 Los plugins que utilizo son los siguientes:
@@ -73,7 +73,7 @@ Los plugins que utilizo son los siguientes:
     La creación de nuevas notas se hace de forma automática al crear un link:
     ![vimwiki creation](/blogger/assets/vimwikiNewNote.gif)
 
-    En mi `.config/nvim/init.vim` (equivalente a `.vimrc`) tengo esta configuración. Primero para crear la vimwiki donde albergo mis notas escolares, utilizo sólo archivos tipo markdown:
+    En mi `.config/nvim/init.vim` (equivalente a `.vimrc`) tengo esta configuración. Primero para crear la vimwiki donde albergo mis notas escolares, utilizando sólo archivos tipo markdown:
 
     ```vim
     let studiousWiki = {}
@@ -83,7 +83,7 @@ Los plugins que utilizo son los siguientes:
     let g:vimwiki_list = [studiousWiki]
     ```
 
-    La siguiente configuración es necesaria para que no interfiera la funcionalidad de `<TAB>` en vimwiki para saltar entre links, con la de `coc-snippets` para expandir un snippet:
+    La siguiente configuración es necesaria para que no interfiera la funcionalidad de `<TAB>` en vimwiki para saltar entre links, con la de `coc-snippets` para navegar entre snippets:
 
 
     ```vim
@@ -96,7 +96,8 @@ Los plugins que utilizo son los siguientes:
 
     ![markdown preview](/blogger/assets/markdownPreview.gif)
 
-    Como configuración mapeo `<Ctrl-E>` como hotkey para abrir y cerrar la visualización previa y defino como será el comportamiento de seguir el cursor, así como los saltos de línea (↵ = `<br>`).
+    Como configuración mapeo `<Ctrl-E>` como hotkey para abrir y cerrar la visualización previa. Defino como será el comportamiento de seguir el cursor y  los saltos de línea (↵ = `<br>`).
+
     ```vim
     nmap <C-e> <Plug>MarkdownPreviewToggle
     let g:mkdp_preview_options = {
@@ -114,7 +115,7 @@ Los plugins que utilizo son los siguientes:
     ```
 * [coc-snippets](https://github.com/neoclide/coc-snippets): Este es el motivo por el cual elijo este setup. Permite crear nuestros propios snippets, esta extensión está basada en [UltiSnips](https://github.com/SirVer/ultisnips) y tiene la mayoría de sus funcionalidades. Es necesario instalar primero [coc](https://github.com/neoclide/coc.nvim), que es un plugin que permite añadir funcionalidades de completar texto, linters y highlighting en distintos lenguajes. Coc-snippets es una extensión de coc.
 
-    Se configura este es para darle a `<TAB>` la funcionalidad para pasar al siguiente snippet de la lista, y con `<ENTER>` se expande.
+    Se configura este para darle a `<TAB>` la funcionalidad de pasar al siguiente snippet de la lista, y con `<ENTER>` se expande.
 
     ```vim
     inoremap <silent><expr> <TAB>
@@ -200,7 +201,7 @@ No es la intención de este post describir como hice la página web como tal, pe
 
 > Jekyll tiene soporte para `Sass` integrado y por tanto sólo hay que hacer un `main.scss` para utilizarlo y así lo hice.
 
-Utilicé el `_layouts/default.html` para utilizar $\KaTeX$ y `mermaid`. Luego hice dos layouts que extienden a `default.html`: `notes.html` y `index.html` para las notas y los menús respectivamente. Creé un directorio donde se encuentran las notas y los menús correspondientes, que es el mismo donde está la vimwiki.
+Jekyll permite crear plantillas de páginas html, basta con especificar en un archivo markdown o html, qué plantilla se quiere usar y al convertirse, tendrá la estructura general de ese plantilla. Así pues, creé el layout `_layouts/default.html` donde está el código para utilizar $\KaTeX$ y `mermaid`. Luego hice dos layouts que extienden a `default.html`: `notes.html` y `index.html` para las notas y los menús respectivamente. Creé un directorio donde se encuentran las notas y los menús correspondientes, que es el mismo donde está la vimwiki.
 
 La estructura de directorios quedó de la siguiente manera (omitiendo los directorios ocultos):
 
@@ -243,7 +244,7 @@ kramdown:
     math_engine: katex
 ```
 
-Se configura el interprete de markdown como `kramdown`, que tiene [soporte](https://kramdown.gettalong.org/math_engine/katex.html) para $\KaTeX$, luego se configura el input como `GFM` para que los saltos de línea sean igual que un `<br>` (si no sería [así](https://gist.github.com/shaunlebron/746476e6e7a4d698b373)). El motor de matemáticas se configura como `katex`.
+Se configura el interprete de markdown como `kramdown`, que tiene [soporte](https://kramdown.gettalong.org/math_engine/katex.html) para $\KaTeX$, luego se configura el input como `GFM` para que los saltos de línea sean igual que un `<br>` (si no, sería [así](https://gist.github.com/shaunlebron/746476e6e7a4d698b373)). El motor de matemáticas se configura como `katex`.
 
 Ahora se manda a llamar a $\KaTeX$ en el `<head>`, en mi caso en el `./layouts/default.html`. Pero también se manda a llamar al método que cambia los delimitadores y desactiva el display, así se puede usar `$ $` para *in-line math*.
 
@@ -289,7 +290,7 @@ Para habilitar esto es necesario activar `htmlLabels`. También modifico el tema
 ```
 
 ### Workflow
-Con este setup, lo único que tengo que hacer es agregar una entrada en el archivo `index.md` hacia la nota `<título de la nota>.md`, agregar el front matter al inicio del archivo, para utilizar el layout de `note`:
+Con este setup, lo único que tengo que hacer es agregar una entrada en el archivo `index.md` hacia la nota `<título de la nota>.md`, agregar el front matter al inicio del archivo creado para utilizar el layout de `note`:
 
 ```
 ---
@@ -297,7 +298,7 @@ layout: note
 ---
 ```
 
-Hago commit en los cambios y se sube al repositorio en GitHub y automáticamente se despliega en la página.
+Escribo algo y hago un commit al repositorio en GitHub y automáticamente se despliega en la página.
 
 Algo que ayuda bastante es que no necesito poner los títulos manualmente, pues en la página se muestran con el nombre del archivo como título de la nota. Además en los índices, se muestra un árbol de los directorios con links a los índices correspondientes. Todo esto se hace se forma automática y en este [artículo](/#) explico como se hace.
 
