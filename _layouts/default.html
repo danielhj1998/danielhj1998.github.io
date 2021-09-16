@@ -23,9 +23,19 @@
     </script>
   </head>
 
-  <body>
+  <body onload="playOnLoad()">
     <div class="page-content">
       {{ content }}
     </div>
+    <script>
+       function playOnLoad() {
+            let img = document.getElementById('photo');
+            img.src = "assets/images/saludo.gif";
+            setTimeout(() => {
+                img.removeEventListener("load", playOnLoad);
+                img.src = "assets/images/saludo.png";
+            }, 2000);
+        }
+    </script>
   </body>
-</htm>
+</html>
