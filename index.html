@@ -9,7 +9,7 @@ layout: default
           <div class="courtain"></div> </a>
         </div>
         <div class="circle">
-            <img onmouseover="playGif(this)" onmouseout="stopGif(this)" class="photo" src="{{site.url}}/assets/images/saludo.png" >
+            <img onmouseover="playGif(this)" onmouseout="stopGif(this)" onload="playOnLoad(this)" class="photo" src="{{site.url}}/assets/images/saludo.png" >
             
 <script>
     function playGif(img) {
@@ -18,6 +18,10 @@ layout: default
     function stopGif(img) {
         img.src = "assets/images/saludo.png";
     };
+    function playOnLoad(img) {
+        img.src = "assets/images/saludo.gif";
+        setTimeout(() => {img.src = "assets/images/saludo.png";}, 2000);
+    }
 </script>
 
         </div>
