@@ -22,6 +22,11 @@ html, body {
     margin: 0 auto;
 }
 
+::selection {
+    color: $clear;
+    background: $dark;
+}
+
 body {
     /* General styles */
     font-family: "Open Sans", sans-serif;
