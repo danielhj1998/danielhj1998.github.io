@@ -1,17 +1,16 @@
 ---
 ---
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400&family=Open+Sans:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;700&display=swap');
 
 @charset "utf-8";
 
 /* Constants */
-$font-size-body: 16px;
+$font-size-body: 18px;
 
 /* Colors */
 $dark: #36393b;
 $clear: white;
-$accent: #215787;
+$accent: #e26f83;
 $secondary: #634d55;
 $gray: #B0B0B0;
 $pink: #f255c0;
@@ -29,19 +28,46 @@ html, body {
 
 body {
     /* General styles */
-    font-family: "Open Sans", sans-serif;
+    font-family: "Inter", sans-serif;
+    font-size: $font-size-body;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: $dark;
     text-align: justify;
+    line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-align: center;
+}
+h1 {
+    font-size: $font-size-body * 1.6;
+}
+h2 {
+    margin-top: 2em;
+    font-size: $font-size-body * 1.4;
+}
+h3 {
+    font-size: $font-size-body * 1.2;
+}
+h4 {
+    font-size: $font-size-body * 1.1;
+}
+h5,h6,p {
+    font-size: $font-size-body;
 }
 
 a {
-    color: $accent;
+    color: $dark;
     text-decoration: none;
     &:hover{
         opacity: 0.7;
-        color: $pink;
+        color: $accent;
     }
 }
 
@@ -87,26 +113,6 @@ div.home {
         }
     }
 
-    h2, h4, h5 {
-        font-family: "Fira Sans", sans-serif;
-        text-align: center;
-    }
-    h2 {
-        font-size: 30px;
-        letter-spacing: 7px;
-        font-weight: 400;
-    }
-    h4 {
-        font-size: 25px;
-    }
-    h5 {
-        font-size: 20px;
-        text-align: left;
-    }
-    p {
-        font-size: 16px;
-    }
-
     div.main-container {
         display: flex;
         flex-direction: column;
@@ -144,7 +150,7 @@ div.home {
                     left: 0;
                     left: 8px;
                     height: 0;
-                    font-family: "Fira Sans";
+                    font-family: "Inter";
                     color: $pink;
                     -webkit-transition: top .2s ease-in-out;
                     transition: top .2s ease-in-out;
@@ -160,9 +166,9 @@ div.secondary-container {
     div.section-container {
         display: flex;
         border-top: solid $gray 2px;
-        h5 {
-            font-weight: 400;
+        h5,p {
             margin: 30px 0;
+            line-height: 1.4;
         }
 
         div.cv-container {
@@ -195,15 +201,30 @@ div.secondary-container {
     a.post-link {
         color: $dark;
         display: flex;
-        flex-direction: column;
-        padding: 10px;
-        border-radius: 5px;
-        border: solid $dark 2px;
+        width: 70%;
+        margin: 0 auto;
+        justify-content: space-between;
+        align-items: center;
         -webkit-transition: all 0.1s linear;
         transition: all 0.1s linear;
-        li {
-            font-size: 18px;
-            font-family: "Fira Sans", sans-serif
+        h5 {
+            text-align: left;
+            margin:0;
+        }
+        div {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            padding-right: 0;
+            padding-left: 20px;
+            p {
+                margin: 10px 0;
+                white-space: nowrap;
+                font-size: 80%;
+                font-weight: 700;
+            }
         }
         &:hover {
             -webkit-transform: scale(1.01);
@@ -212,14 +233,6 @@ div.secondary-container {
             -o-transform: scale(1.01);
             transform: scale(1.01);  
             color: $dark;
-        }
-        div {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            justify-content: space-between;
-            font-family: "Fira Sans", sans-serif;
-            p {margin: 0}
         }
     }
 }
