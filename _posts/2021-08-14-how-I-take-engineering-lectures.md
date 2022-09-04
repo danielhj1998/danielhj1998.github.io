@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Cómo tomo mis notas de ingeniería utilizando Vim y GitHub pages
-tag: Vim Neovim
-reading_time: 15
+tag: Vim Neovim LaTeX KaTeX Markdown
+reading_time: 10
 date_shown: 14 Ago 2021
 excerpt_separator: <!--intro-->
 ---
