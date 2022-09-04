@@ -23,6 +23,7 @@ email: danielhg52@hotmail.com
 description: Hello! I am Daniel Hernandez, a Mechatronics Engineering student who loves to code, play videogames and eat chinese food
 baseurl: ""
 url: "https://danielhj.com"
+permalink: /:categories/:slug
 twitter_username: DanielHJ1998
 github_username:  danielhj1998
 
